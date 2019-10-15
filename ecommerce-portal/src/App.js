@@ -62,7 +62,6 @@ class App extends React.Component {
             }
           />
         </Switch>
-        <HomePage />
       </div>
     );
   }
