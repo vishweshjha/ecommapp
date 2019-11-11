@@ -1,27 +1,27 @@
-import React from "react";
-
-import StripeChekout from "react-stripe-checkout";
+import React from 'react';
+import StripeCheckout from 'react-stripe-checkout';
 
 const StripeCheckoutButton = ({ price }) => {
   const priceForStripe = price * 100;
-  const publishablekey = "pk_test_MA6mTmk35ps1AHIDHj54pQSI00xFSJER3g";
+  const publishableKey = 'pk_test_WBqax2FWVzS9QlpJScO07iuL';
 
   const onToken = token => {
     console.log(token);
-    alert("Payment Successful");
+    alert('Payment Succesful!');
   };
 
   return (
-    <StripeChekout
+    <StripeCheckout
       label='Pay Now'
-      name='Ecomm App'
-      shippingAddress
+      name='CRWN Clothing Ltd.'
       billingAddress
-      description={`your total is  $ ${price}`}
+      shippingAddress
+      image='https://svgshare.com/i/CUz.svg'
+      description={`Your total is $${price}`}
       amount={priceForStripe}
       panelLabel='Pay Now'
       token={onToken}
-      stripeKey={publishablekey}
+      stripeKey={publishableKey}
     />
   );
 };
